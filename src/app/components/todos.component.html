@@ -1,0 +1,22 @@
+<table class="table table-striped w-50 table-dark">
+   <thead>
+      <tr class="fw-bold">
+         <td>Id</td>
+         <td>To Do</td>
+         <td>Status</td>
+      </tr>
+   </thead>
+   <tbody>
+      <tr *ngFor="let todo of todos">
+         <td>{{ todo.id }}</td>
+         <td class="text-capitalize">{{ todo.todo }}</td>
+         <td class="gap-2 d-flex">
+            <button (click)="handleToggleClick(todo.id)" class="btn btn-sm {{ todo.hasDone ? 'btn-success' : 'btn-danger' }}">{{ todo.hasDone ? "Done" : "Unfinished" }}</button>
+            <button (click)="delete.emit(todo.id)" class="btn btn-sm btn-warning">Delete</button>
+         </td>
+     </tr>
+     <tr>
+      <td *ngIf="todos.length == 0" colspan="3" class="text-center text-danger fw-bold">There is no to do!</td>
+     </tr>
+   </tbody>
+</table>

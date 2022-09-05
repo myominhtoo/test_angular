@@ -1,0 +1,5 @@
+<tr>
+    <td>{{ todo.id }}</td>
+    <td>{{ todo.todo }}</td>
+    <td><button class="btn {{ todo.hasDone ? 'btn-success' : 'btn-danger' }}">{{ todo.hasDone ? "Done" : "Unfinished" }}</button></td>
+</tr>
